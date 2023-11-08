@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleLoginRegistro.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container__logo"></div>
+        <div class="container__formLogin">
+            <h2>Iniciar Sesión</h2>
+            <form action="../controlador/validad.php" method="post">
+
+                <input id="correo" name="correo" type="email" placeholder="Correo" required title="ejemplo@example.com">
+
+                <input id="contraseña" name="contraseña" type="password" placeholder="Contraseña" required >
+                
+                <button>ACCEDER</button>
+                <div class="opciones">
+                    <a href="registro.html">Regístrate</a>
+                    <span>Versión 0.1</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

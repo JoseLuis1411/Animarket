@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleLoginRegistro.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container" style="padding: 40px;">
+        <div class="container__logo"></div>
+        <div class="container__formLogin">
+            <h2>Registrar</h2>
+            <form action="../controlador/guardarUsuario.php" method="post" >
+                
+                <input  id="correo" name="correo" placeholder="Correo*"  type="email"required minlength="11"maxlength="50"pattern="{8,64}"
+                title="ejemplo@example.com" />
+
+                <input id="nombre" name="nombre" type="text"placeholder="Nombre*" required  minlength="2"maxlength="30" 
+                pattern="[a-z A-Z]*[a-z]" title="No ingrese numeros ni simbolos" />
+
+                <input id="ap1" name="ap1" type="text"placeholder="Apellido Paterno*" minlength="2"maxlength="30" 
+                pattern="[a-z A-Z]*[a-z]" title="No ingrese numeros ni simbolos" />
+
+                <input id="ap2" name="ap2" type="text"placeholder="Apellido Materno" minlength="2"maxlength="30" 
+                pattern="[a-z A-Z]*[a-z]" title="No ingrese numeros ni simbolos" />
+
+                <input id="contraseña" name="contraseña" placeholder="Contraseña*" type="password" required minlength="8"maxlength="50" 
+                pattern="([a-zA-Z][A-Za-z0-9#$%&/()=?¡*.;,:+-]*[0-9][A-Za-z0-9#$%&/()=?¡*.;,:+-]*[#$%&/()=?¡*.;,:+-][A-Za-z0-9#$%&/()=?¡*.;,:+-]*)|([a-zA-Z][A-Za-z0-9#$%&/()=?¡*.;,:+-]*[#$%&/()=?¡*.;,:+-][A-Za-z0-9#$%&/()=?¡*.;,:+-]*[0-9][A-Za-z0-9#$%&/()=?¡*.;,:+-]*)"  
+                title="La contraseña debe de ser de minimo 8 caracteres, comenzar con una letra, debe de contener numeros, simblos y no puede llevar espacios" />
+                
+                <input id="valcontraseña" name="valcontraseña" placeholder="Confirmar contraseña*" type="password" required minlength="8"maxlength="50" 
+                pattern="[A-Za-z0-9#$%&/()=?¡*.;,:+-]*[a-zA-Z][A-Za-z0-9#$%&/()=?¡*.;,:+-]*[0-9][A-Za-z0-9#$%&/()=?¡*.;,:+-]*[#$%&/()=?¡*.;,:+-][A-Za-z0-9#$%&/()=?¡*.;,:+-]*"
+                title="La contraseña debe de ser de minimo 8 caracteres, contener letras, numeros, simblos y no puede llevar espacios" autocomplete="off"/>
+
+                <button value="ENVIAR" onclick="comprobarClave()">Enviar</button>
+                
+                <input type="submit" name = "enviar" id="enviar" class="boton" hidden>
+
+
+                <div class="opciones">
+                    <a href="login.html">¿Ya tienes una cuenta? Inicia Sesión</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+		//Da clic automaticamente al boton submit invisible 
+		function clickButton() {
+			document.querySelector('#enviar').click();
+		}
+
+		//Comprueba las contraseñas
+		function comprobarClave() {
+		  clave1 = document.f1.contraseña.value;
+		  clave2 = document.f1.valcontraseña.value;
+	
+		  if (clave1 == clave2) {
+			//Valida que los input no esten lleno de espacios
+			if (!($("#nombre").val().trim().length > 2 )) {
+				alert("Por favor ingresa un nombre valido");
+			} else if (!($("#apellidoP").val().trim().length > 2 )) {
+				alert("Por favor ingresa un apellido paterno valido");
+			} else if (!($("#apellidoM").val().trim().length > 2 )) {
+				alert("Por favor ingresa un apellido materno valido");
+			} else  {
+				clickButton();
+			}
+		  } else {
+			alert("Las dos contraseñas ingresadas son diferentes, favor de verificarlas");
+		  }
+		}
+	  </script>
+
+</body>
+</html>
