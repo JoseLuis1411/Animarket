@@ -3,31 +3,46 @@
 }
 
 body{
-    background: #78af3e; 
+    background: #fbe5d6; 
+    /*background-image: url("/imagenes/fondoHuellas.png");*/
+}
+
+.linea_superior {
+    position: absolute;
+    background-color: #663300;
+    height: 20vh;
+    width: 100vw;
+    z-index: -2;
+}
+
+.container_principal{
     display: flex;
-    height: 100vh ;
+    height: 100vh;
+    width: 100vw;
     text-align: center;
     justify-content: center;
-    align-items: center;
-    /*background-image: url("/imagenes/fondoHuellas.png");*/
+    align-items: flex-start;
 }
 
 .container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
     background-color: #ffffff;
-    border-radius: 60px;
-    padding: 60px;
-    border: 3px solid #55a500fd /*#55a500fd*/
+    border-radius: 80px;
+    padding: 20px 80px;
+    border-left: 3px solid rgba(102, 51, 0, 0.3);
+    border-bottom: 3px solid rgba(102, 51, 0, 0.3);
+    margin-top: 12vh;
 }
 
 .container__logo{
-    background-image: url("/imagenes/logo.png");
+    background-image: url("../imagenes/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    grid-column: 1/ 3;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .container__formLogin form{
@@ -36,13 +51,9 @@ body{
 }
 
 .container__formLogin {
-    grid-column: 3 / 4;
-}
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
 
-.container__formLogin h2{
-    color: #64b330  ; /*#64b330*/
-    font-size: 2.5em;
-    margin-bottom: 35px;
 }
 
 .container__formLogin input{
@@ -53,7 +64,7 @@ body{
 }
 
 .container__formLogin input:focus{
-    border-bottom: 2px solid #c55a11; /*#c55a11*/
+    border-bottom: 2px solid #843c0c; /*#c55a11*/
     outline: none;
 }
 
@@ -67,20 +78,22 @@ body{
 */
 
 .container__formLogin button{
-    background-color: #c55a11;/*#c55a11*/
+    background-color: #843c0c;/*#c55a11*/
     color: #fff;
     border-radius: 5px;
-    border: 0;
+    border: 2px solid #843c0c;
     padding: 10px;
-    margin: 30px 0px;
-    box-shadow: 4px 4px 4px #833d0e; /*#833d0e*/
+    margin: 40px 0px;
+    box-shadow: 4px 4px 4px #7c3709; /*#833d0e*/
     font-size: 18px;
+    transition: background-color .5s;
 }
 
 .container__formLogin button:hover{
-    background-color: #b95918; /*#b95918*/
+    background-color: #ffffff; /*#b95918*/
     transform: scale(1.02);
-
+    color: #843c0c;
+    font-weight: 550;
 }
 
 .container__formLogin .opciones{
@@ -91,12 +104,12 @@ body{
 
 .container__formLogin a{
     text-decoration: none;
-    color: #c55a11; /*#c55a11*/
+    color: #9a6039; /*#c55a11*/
     transition: transform .5s;
 }
 
 .container__formLogin a:hover{
-    color: #af4f0f; /*#af4f0f*/
+    color: #9a6039; /*#af4f0f*/
     transform: scale(1.2);
 }
 
@@ -104,13 +117,12 @@ body{
     color: #767172; /*#767172*/
 }
 
-@media screen and (max-width: 730px){
-    .container__logo{
-        display: none;
-    }
 
-    .container__formLogin {
-        grid-column: 1 / span 3;
+@media screen and (max-width: 730px){
+
+    .container{
+        padding: 20px 40px;
     }
 }
+
 
