@@ -20,12 +20,12 @@
 		$datos = compras();
 		$tblmain = "";
 		foreach ($datos as $filas){
-			$tblmain .="<tr class='text-center'>\n";
+			$tblmain .="<tr class='filas'>\n";
+			$tblmain .="<td>#". $filas['IdCompraAnimal'] . "</td>\n";
 			$tblmain .="<td>". $filas['cAnimal'] . "</td>\n";
 			$tblmain .="<td>". $filas['dFechaCompra'] . "</td>\n";
 			$tblmain .= "<td>
-			<a href='../vista/animales.php?ID=".$filas["IdCompraAnimal"]."'>Ver Todos</a>\n";
-
+			<a href='../vista/animales.php?ID=".$filas["IdCompraAnimal"]."'>Ver detalles</a>\n";
 		}
 		return $tblmain;
 	}

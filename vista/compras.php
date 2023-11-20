@@ -17,10 +17,11 @@
   }else{
     session_destroy();
     echo "<script>alert('no has iniciado sesión');
-    window.location.href='login.php'; 
+    window.location.href='login.html'; 
     </script>";
   }
-  //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::Corregir la ruta login
+  
+  $currentPage = basename($_SERVER['PHP_SELF']); // Obtiene el nombre del archivo actual
 ?>
 
 <!DOCTYPE html>
@@ -28,33 +29,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Compras</title>
+    <link rel="stylesheet" href="css/styleGeneral.css">
+    <script src="https://kit.fontawesome.com/73804f7b43.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>Compras</h1>
-    <button><a href="../controlador/cerrarSesion.php">Cerrar sesion</a></button>
-        <section class="section">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                  <div class="bg-white p-4">
-                    <table class="table">
-                      <thead>
-                        <tr class="" style="background: #C0F6F0; color:#000;">
-                          <th class="text_center">Animal</th>
-                          <th class="text_center">Fecha de Compra</th>
-                          <th class="text_center">Ver Animales</th>
 
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php echo $cCompras; ?>
-                      </tbody>
-                    </table>
-                  </div>  
-            </div>
-        </section>
+      <div class="container-general">
+        <div class="item flex-header">
+          <div class="logo"></div>
+          <ul>
+            <li <?php if ($currentPage === 'compras.php') echo 'class="active"'; ?>><a href="compras.php">Compras</a></li>
+            <li <?php if ($currentPage === 'ventas.php') echo 'class="active"'; ?>><a href="ventas.php">Ventas</a></li>
+            <li <?php if ($currentPage === 'ayuda.php') echo 'class="active"'; ?>><a href="ayuda.php">Ayuda</a></li>
+            <li><a href="../controlador/cerrarSesion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    
 
-        <a href="registroAnimal.html">Regístrato Animal</a>
-</body>
+      <div class="item flex-main">
+          <h1>Compras</h1>
+          <a href="registroAnimal.html">Registrar nueva compra</a>
+          <div class="tabla">
+            <table>
+              <thead>
+                <tr >
+                  <th class="encabezado">Id de compra</th>
+                  <th class="ecabezado">Animal Comprado</th>
+                  <th class="encabezado">Fecha de Compra</th>
+                  <th class="encabezado"></th>
+
+                </tr>
+              </thead>
+              <tbody>n
+                <?php echo $cCompras; ?>
+              </tbody>
+            </table>
+          </div>  
+      </div>
+
+      <div class="item flex-footer">
+          <small>&copy; 2023 Animarket. Todos los derechos reservados.</small>
+      </div>
+
+  </body>
 </html>
