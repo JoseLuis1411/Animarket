@@ -41,37 +41,19 @@
           <div class="logo"></div>
           <ul>
             <li <?php if ($currentPage === 'compras.php') echo 'class="active"'; ?>><a href="compras.php">Compras</a></li>
-            <li <?php if ($currentPage === 'ventas.php') echo 'class="active"'; ?>><a href="ventas.php">Ventas</a></li>
+            <li <?php if ($currentPage === 'historialVentas.php') echo 'class="active"'; ?>><a href="historialVentas.php">Ventas</a></li>
             <li <?php if ($currentPage === 'ayuda.php') echo 'class="active"'; ?>><a href="ayuda.php">Ayuda</a></li>
             <li><a href="../controlador/cerrarSesion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
           </ul>
         </div>
       </div>
     
-
-      <div class="item flex-main">
+      <div class="contenedor-general2">
+        <div class="item flex-main">
           <h1>Compras</h1>
-          <a href="registroAnimal.html">Registrar nueva compra</a>
-          <div class="tabla">
-            <table>
-              <thead>
-                <tr >
-                  <th class="encabezado">Id de compra</th>
-                  <th class="ecabezado">Animal Comprado</th>
-                  <th class="encabezado">Fecha de Compra</th>
-                  <th class="encabezado"></th>
-
-                </tr>
-              </thead>
-              <tbody>n
-                <?php echo $cCompras; ?>
-              </tbody>
-            </table>
-          </div>  
-      </div>
-
-      <div class="item flex-footer">
-          <small>&copy; 2023 Animarket. Todos los derechos reservados.</small>
+          <div class="registrar-button"><a  href="registroAnimal.html">Registrar nueva compra</a></div>
+          <?php echo $cCompras;  ?>
+        </div>
       </div>
 
   </body>

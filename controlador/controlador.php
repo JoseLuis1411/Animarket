@@ -20,12 +20,32 @@
 		$datos = compras();
 		$tblmain = "";
 		foreach ($datos as $filas){
-			$tblmain .="<tr class='filas'>\n";
-			$tblmain .="<td>#". $filas['IdCompraAnimal'] . "</td>\n";
-			$tblmain .="<td>". $filas['cAnimal'] . "</td>\n";
-			$tblmain .="<td>". $filas['dFechaCompra'] . "</td>\n";
-			$tblmain .= "<td>
-			<a href='../vista/animales.php?ID=".$filas["IdCompraAnimal"]."'>Ver detalles</a>\n";
+
+			if($filas['cAnimal'] == "Vaca"){
+				$rutaAnimal = "vaca.jpg";
+			} else if($filas['cAnimal'] == "Cerdo"){
+				$rutaAnimal = "puerco.png";
+			} else if($filas['cAnimal'] == "Pollo"){
+				$rutaAnimal = "gallina.png";
+			} else if($filas['cAnimal'] == "Chiva"){
+				$rutaAnimal = "chiva.png";
+			} else if($filas['cAnimal'] == "Borrega"){
+				$rutaAnimal = "borrego.png";
+			} 
+
+			$tblmain .="<div class='grid-tarjeta'>";
+            $tblmain .="<div class='fecha-tarjeta'>";
+            $tblmain .="  <h4>".$filas['dFechaCompra'] ."</h4>";
+            $tblmain .="  <hr>";
+            $tblmain .="</div>";
+            $tblmain .="<img class='imagen-tarjeta' src='imagenes/". $rutaAnimal. "' alt=''>";
+            $tblmain .="<div class='grid-tarjeta__descripcion'>";
+            $tblmain .="  <h3 class='titulo-tarjeta'>". $filas['cAnimal'] . "</h3>";
+            $tblmain .="  <p>Se compraron 50 machos y 20 hembras</p>";
+            $tblmain .="</div>";
+            $tblmain .="<p class='distribuidor-tarjeta'> <b>Distribuidor: </b> Juan Perez</p>";
+            $tblmain .="<a href='../vista/animales.php?ID=".$filas["IdCompraAnimal"]."'>Ver detalles</a>";
+        	$tblmain .="</div>";
 		}
 		return $tblmain;
 	}

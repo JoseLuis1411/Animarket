@@ -1,15 +1,29 @@
 
 :root{
-    /*Encabezado*/
+    /*Header*/
     --fondoHeader: #663300;
     --fondoEnlace: #bd8943;
     --fondoEnlaceActivo: #843c0c;
-    --enlacesHover: #f0dccf; 
-    
+    --enlacesHover: #f0dccf;
+    --colorTextEnlaces: #fff; 
+
+    /*Main general*/
+    --fondoMain: #fbe5d6;
+    --tituloh1: #663300;
+    --fondoButtonNormal: #c55b13;
+
+    /*Pagina compras*/
+    --fondoTarjetas: #FFF;
+    --fondoButtonTarjetas: #c55b13;
+    --fondoButtonTarjetasHover: #b3510f;
+    --colorTextTarjetas: black;
+    --colorTextButtonTarjetas: #fff;    
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: var(--fondoMain);
+
 }
 
 *{
@@ -24,28 +38,30 @@ body {
     position: fixed;
     width: 100vw;
     height: 15vh;
+    min-height: 58px;
     background-color: var(--fondoHeader);
+    z-index: 999;
 }
 
 .flex-header{
     height: 100%;
     max-width: 1100px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    display: flex;
 }
 
 .flex-header ul{
     list-style: none;
     display: flex;
     align-items: center;
-    padding: 0 2vw;
+    margin-right: 10px;
 }
 
 .flex-header ul li{
-    padding: 10px 30px;
-    margin: 2%;
+    margin: 1vw;
+    padding: 2vh 2vw;
     border-radius: 20px;
     transition: transform .3s;
     background-color: var(--fondoEnlace) ;
@@ -66,11 +82,13 @@ body {
 
 .flex-header ul a{
     text-decoration: none;
-    color: white;
+    color: var(--colorTextEnlaces);
+    font-size: 15px;
 }
 
 
 .flex-header .logo{
+    margin-left: 13px;
     background-image: url(../imagenes/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -83,6 +101,265 @@ body {
 /*-------------------------------------------------------Main*/
 
 
+/*COMPRAS PAGE*/
+
+.contenedor-general2{
+    position: relative;
+    top: 15vh;
+    height: calc(100vh - 15vh);
+}
+
+
+.flex-main{
+    height: 100%;
+    max-width: 1100px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex-main h1{
+    margin: 10px;
+    color: var(--tituloh1);
+    font-size: 30px;
+}
+
+
+.flex-main .registrar-button{
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-main .registrar-button a{
+    border-radius: 10px;
+    background-color: var(--fondoButtonNormal);
+    padding: 11px;
+    color: white; 
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.grid-tarjeta{
+    background-color: var(--fondoTarjetas);
+    padding: 20px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr;
+    grid-template-rows: 10px 100px;
+    gap: 30px;
+    color: var(--colorTextTarjetas);
+}
+
+.grid-tarjeta .fecha-tarjeta{
+    grid-row: 1/2;
+    grid-column: 1/-1;
+}
+
+
+.grid-tarjeta .fecha-tarjeta h4{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-size: 15px;
+}
+
+.grid-tarjeta .fecha-tarjeta hr{
+    opacity: 0.5;
+}
+
+.grid-tarjeta .imagen-tarjeta {
+    padding-top: 5px;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.grid-tarjeta__descripcion{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-tarjeta__descripcion h3{
+    font-size: 17px;
+}
+
+.grid-tarjeta__descripcion p{
+    font-size: 14px;
+}
+
+.grid-tarjeta .distribuidor-tarjeta{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
+}
+
+.grid-tarjeta a{
+    grid-row: 2/3;
+    grid-column: 4/5;
+    margin: auto;
+    background-color: var(--fondoButtonTarjetas);
+    padding: 10px 30px;
+    border-radius: 15px;
+    color: var(--colorTextButtonTarjetas);
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    transition: all .2s;
+}
+
+.grid-tarjeta a:hover, .flex-main .registrar-button a:hover{
+    transform: scale(1.009);
+    background-color: var(--fondoButtonTarjetasHover);
+}
+
+
+
+@media screen and (max-height: 355px){
+    .contenedor-general2{
+        position: relative;
+        top: 58px;
+        height: calc(100vh - 58px);
+        background-color: var(--fondoMain);
+    }
+}
+
+/*Telefono*/
+@media screen and (max-width: 576px){
+    /*HEADER*/
+    .container-general{
+        position: absolute;
+        width: 100%;
+        height: 20vh;
+    }
+
+    .flex-header{
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .flex-header ul li{
+        margin-bottom: 2vw;
+        padding: 1vh 2vw;
+        transition: transform .3s;
+        background-color: transparent;
+    }
+
+    .flex-header ul a{
+        font-size: 13px;
+    }
+
+
+    .flex-header .logo{
+        margin: 0;
+        margin-top: 5px;
+        width: 40%;
+        height: 70%;
+    }
+
+
+    /*COMPRAS PAGE*/
+    .contenedor-general2{
+        top: 20vh;
+        height: calc(100vh - 20vh);
+    }
+
+    .flex-main h1{
+        margin: 15px;
+        font-size: 25px;
+    }
+
+    .flex-main .registrar-button{
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .grid-tarjeta__descripcion h3{
+        font-size: 15px;
+    }
+    
+    .grid-tarjeta__descripcion p{
+        font-size: 13px;
+    }
+
+    .grid-tarjeta .distribuidor-tarjeta{
+        font-size: 14px;
+    }
+
+    .grid-tarjeta a{
+        font-size: 13px;
+    }
+
+    .grid-tarjeta .fecha-tarjeta h4{
+        font-size: 14px;
+    }
+    
+}
+
+/*Tablets*/
+@media screen and (min-width: 576px) and (max-width: 756px){
+    /* HEADER*/
+    .flex-header ul a{
+        font-size: 13px;
+    }
+
+
+    /*COMPRAS PAGE*/
+    
+    .flex-main h1{
+        margin: 10px;
+        color: var(--tituloh1);
+        font-size: 25px;
+    }
+
+    .flex-main .registrar-button{
+        font-size: 12px;
+    }
+
+    .grid-tarjeta .imagen-tarjeta {
+        padding-top: 5px;
+        grid-row: 2/3;
+        grid-column: 1/2;
+        margin: auto;
+        max-width: 100%;
+        height: auto;
+    }
+    
+
+    .grid-tarjeta__descripcion h3{
+        font-size: 15px;
+    }
+    
+    .grid-tarjeta__descripcion p{
+        font-size: 13px;
+    }
+    
+    .grid-tarjeta .distribuidor-tarjeta{
+        grid-row: 2/3;
+        grid-column: 3/4;
+        text-align: center;
+        margin: auto;
+        font-size: 14px;
+    }
+    
+    .grid-tarjeta a{
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+}
 
 
 
