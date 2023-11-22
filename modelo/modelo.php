@@ -449,8 +449,60 @@
 		}
 
 
+		function consVentas ( ){			
+			$VIdUs = $_SESSION['id'];
 
+			$sql = "SELECT CA.IdCompraAnimal, A.cAnimal, CA.dFechaCompra 
+			FROM comprasanimales CA 
+			INNER JOIN animales A ON CA.IdAnimal = A.IdAnimal 
+			WHERE CA.IdUs = '".$VIdUs."' AND CA.bEstatus = 2
+			ORDER BY CA.IdCompraAnimal DESC;";
 
+			$resCompra = mysqli_query ($this->conn, $sql);
+			if(!$resCompra){
+				$error = 'MYSQL Error: ' . mysqli_connect_error();
+			}
+			return $resCompra;
+		}
+
+		function consAnimalesVendidos ($compra){
+
+			$VIdCompraAnimal = $compra;
+
+			$sql = "SELECT DA.*, A.cAnimal, S.cSexo, CA.IdCompraAnimal ,CA.nPrecioCompra, CA.nPesoCompra, CA.dFechaCompra, GA.IdGastoAnimal,
+			GA.nComida, GA.nAgua, GA.nMedicina, GA.nVeterinario, GA.nTransporte, GA.nOtros 
+			FROM detalleanimales DA 
+			INNER JOIN sexos S ON S.IdSexo = DA.IdSexo 
+			INNER JOIN comprasanimales CA ON CA.IdCompraAnimal = DA.IdCompraAnimal 
+			INNER JOIN animales A ON A.IdAnimal = CA.IdAnimal 
+			INNER JOIN gastosanimales GA ON GA.IdDetalleAnimal = DA.IdDetalleAnimal 
+			WHERE DA.IdCompraAnimal = '".$VIdCompraAnimal."';";
+
+			$resAnimales = mysqli_query ($this->conn, $sql);
+			if(!$resAnimales){
+				$error = 'MYSQL Error: ' . mysqli_connect_error();
+			}
+			return $resAnimales;
+		}
+
+		function vendeCompra($params){
+			$error="";
+			$valor="";
+			$id = $params["id"];
+
+			$query = "UPDATE comprasAnimales SET bEstatus = 2 WHERE IdCompraAnimal = '".$id."' ";
+			
+			if($this->conn->query($query)){
+				$valor = $this->conn->affected_rows;		
+			}else{
+				$error = '[' . $this->conn->error . ']';
+			}
+
+			$resul[] = $valor;
+			$resul[] = $error;	
+			return $resul;
+
+		}
     }
 	
 ?>
