@@ -38,7 +38,7 @@
             $tblmain .="  <h4>".$filas['dFechaCompra'] ."</h4>";
             $tblmain .="  <hr>";
             $tblmain .="</div>";
-            $tblmain .="<img class='imagen-tarjeta' src='imagenes/". $rutaAnimal. "' alt=''>";
+            $tblmain .="<img class='imagen-tarjeta' src='imagenes/animales/". $rutaAnimal. "' alt=''>";
             $tblmain .="<div class='grid-tarjeta__descripcion'>";
             $tblmain .="  <h3 class='titulo-tarjeta'>". $filas['cAnimal'] . "</h3>";
             $tblmain .="  <p>Se compraron 50 machos y 20 hembras</p>";

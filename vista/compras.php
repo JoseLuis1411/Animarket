@@ -4,13 +4,6 @@
 
   //si existe la sesion
   if(isset($_SESSION["nombre"]) ){
-
-    if(empty($_SESSION["bienvenida"])) {
-      $_SESSION["bienvenida"] = "ya estuvo suavicremas";
-      echo "<script>alert('Bienvenido');
-      </script>";
-    }
-
     $cCompras = c_Compras();
   
     //si no destrulle la sesion
@@ -78,7 +71,29 @@
             });
         }
 
+        function bienvenida(){
+          Swal.fire({
+          title: "Bienvenido",
+          width: 600,
+          padding: "3em",
+          color: "#716add",
+          backdrop: `
+            rgba(0,0,123,0.4)
+            url("imagenes/gif/puercoCorriendo.gif")
+            left top
+            no-repeat
+          `
+        });
+        }
+
     </script>
+
+      <?php 
+      if(empty($_SESSION["bienvenida"])) {
+      $_SESSION["bienvenida"] = "ya estuvo suavicremas";
+        echo "<script>bienvenida();</script>";
+      }
+      ?>
 
   </body>
 </html>
