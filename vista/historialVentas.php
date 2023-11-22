@@ -6,7 +6,6 @@
     if(isset($_SESSION["nombre"])){
         $cVentas = c_Ventas();
 
-
     }else{
         session_destroy();
         echo "<script>alert('no has iniciado sesión');
