@@ -42,31 +42,8 @@
         </div>
       </div>
 
-    <div class="contenedor-general2">
-      <h1>Historial de Ventas</h1>
-          <section class="section">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                    <div class="bg-white p-4">
-                      <table class="table">
-                        <thead>
-                          <tr class="" style="background: #C0F6F0; color:#000;">
-                            <th class="text_center">Animal</th>
-                            <th class="text_center">Fecha de Compra</th>
-                            <th class="text_center">Ver Animales</th>
+      
 
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php echo $cVentas; ?>
-                        </tbody>
-                      </table>
-                    </div>  
-              </div>
-          </section>
-          <a href="compras.php">Regresar</a>
-      </div>
 
       <script>
         function cerrarSesionConfirmacion() {

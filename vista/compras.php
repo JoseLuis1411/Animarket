@@ -31,8 +31,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compras</title>
     <link rel="stylesheet" href="css/styleGeneral.css">
+    <!--Iconos-->
     <script src="https://kit.fontawesome.com/73804f7b43.js" crossorigin="anonymous"></script>
-
+    <!--Alertas-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -43,7 +45,7 @@
             <li <?php if ($currentPage === 'compras.php') echo 'class="active"'; ?>><a href="compras.php">Compras</a></li>
             <li <?php if ($currentPage === 'historialVentas.php') echo 'class="active"'; ?>><a href="historialVentas.php">Ventas</a></li>
             <li <?php if ($currentPage === 'ayuda.php') echo 'class="active"'; ?>><a href="ayuda.php">Ayuda</a></li>
-            <li><a href="../controlador/cerrarSesion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            <li><a href="javascript:void(0)" onclick="cerrarSesionConfirmacion()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
           </ul>
         </div>
       </div>
@@ -55,6 +57,28 @@
           <?php echo $cCompras;  ?>
         </div>
       </div>
+
+      <script>
+        function cerrarSesionConfirmacion() {
+
+            swal.fire({
+                title: "¿Seguro que quieres cerrar sesión?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, cerrar sesion",
+                cancelButtonText: "No, cancelar",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirige a la página de cerrar sesión si la confirmación es exitosa
+                    window.location.href = '../controlador/cerrarSesion.php';
+                }
+            });
+        }
+
+    </script>
 
   </body>
 </html>
