@@ -4,8 +4,7 @@
 
   //si existe la sesion
   if(isset($_SESSION["nombre"]) ){
-    $cCompras = c_Compras();
-  
+    $cCompras = c_Compras();  
     //si no destrulle la sesion
   }else{
     session_destroy();
@@ -46,12 +45,40 @@
       <div class="contenedor-general2">
         <div class="item flex-main">
           <h1>Compras</h1>
-          <div class="registrar-button"><a  href="registroAnimal.html">Registrar nueva compra</a></div>
+          <div class="registrar-button"><a  href="registroAnimal.php">Registrar nueva compra</a></div>
           <?php echo $cCompras;  ?>
+        </div>
+        <div class="piePagina">
+          <p>&copy; 2023 Animarket | Todos los derechos reservados</p>
         </div>
       </div>
 
+      <?php if ($_SESSION["nuevoRegistro"]){ ?>
+        <script>          
+          const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              }
+            });
+            Toast.fire({
+              icon: "success",
+              title: "Compra registrada exitosamente"
+            });
+        </script>
+      <?php 
+          $_SESSION["nuevoRegistro"] = false;
+        } ?>
+
+
+
       <script>
+
         function cerrarSesionConfirmacion() {
 
             swal.fire({

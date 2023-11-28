@@ -35,8 +35,8 @@
         } 
         else 
         {
-            echo "<script>alert('Registro exitoso');
-            window.location.href='../Vista/compras.php  ';
+            $_SESSION["nuevoRegistro"] = true;
+            echo "<script> window.location.href='../Vista/compras.php  ';
             </script>";
         }
 ?>
