@@ -43,7 +43,7 @@
     </div>
     
       
-    <div class="contenedor-general2 flex">
+    <div class="contenedor-general2">
       <div class="contenedor-registroAnimal" >
           <img id="imagenAnimal" src="imagenes/animales/signoInterrogacion.png" alt="">
           <div class="contenedorFormulario-registroAnimal">
@@ -55,7 +55,7 @@
                   <option value="">Selecciona un animal</option>
                   <option value="1">Vaca</option>
                   <option value="2">Cerdo</option>
-                  <option value="3">Pollo</option>
+                  <option value="3">Pollo / Gallina</option>
                   <option value="4">Chiva</option>
                   <option value="5">Borrego</option>
                 </select>

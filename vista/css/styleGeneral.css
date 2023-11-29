@@ -298,6 +298,28 @@ body {
 }
 
 
+/*----------------------------------------------Registrar gastos*/
+
+.contenedor-registroGastos{
+    height: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+}
+
+.contenedor-registroGastos .contenedorFormulario-registroGastos{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin: auto;
+}
+
+.contenedorFormulario-registroGastos h2{
+    margin: 20px 0;
+    align-self: center;
+    color: var(--tituloh1);
+}
+
 
 
 /*----------------------------------------------FORMULARIOS GENERALES*/

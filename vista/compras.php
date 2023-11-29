@@ -53,30 +53,6 @@
         </div>
       </div>
 
-      <?php if ($_SESSION["nuevoRegistro"]){ ?>
-        <script>          
-          const Toast = Swal.mixin({
-              toast: true,
-              position: "top-end",
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-              }
-            });
-            Toast.fire({
-              icon: "success",
-              title: "Compra registrada exitosamente"
-            });
-        </script>
-      <?php 
-          $_SESSION["nuevoRegistro"] = false;
-        } ?>
-
-
-
       <script>
 
         function cerrarSesionConfirmacion() {
@@ -117,10 +93,35 @@
 
       <?php 
       if(empty($_SESSION["bienvenida"])) {
-      $_SESSION["bienvenida"] = "ya estuvo suavicremas";
+        $_SESSION["bienvenida"] = "ya estuvo suavicremas";
+        $_SESSION["nuevoRegistro"] = false;
         echo "<script>bienvenida();</script>";
       }
       ?>
+
+
+    <?php if ($_SESSION["nuevoRegistro"]){ ?>
+        <script>          
+          const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              }
+            });
+            Toast.fire({
+              icon: "success",
+              title: "Compra registrada exitosamente"
+            });
+        </script>
+      <?php 
+          $_SESSION["nuevoRegistro"] = false;
+    } ?>
+
 
   </body>
 </html>
