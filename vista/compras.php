@@ -95,6 +95,7 @@
       if(empty($_SESSION["bienvenida"])) {
         $_SESSION["bienvenida"] = "ya estuvo suavicremas";
         $_SESSION["nuevoRegistro"] = false;
+        $_SESSION["nuevoGasto"] = false;
         echo "<script>bienvenida();</script>";
       }
       ?>
@@ -106,7 +107,7 @@
               toast: true,
               position: "top-end",
               showConfirmButton: false,
-              timer: 3000,
+              timer: 4000,
               timerProgressBar: true,
               didOpen: (toast) => {
                 toast.onmouseenter = Swal.stopTimer;

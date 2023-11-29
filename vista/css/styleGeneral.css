@@ -308,13 +308,14 @@ body {
 }
 
 .contenedor-registroGastos .contenedorFormulario-registroGastos{
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 20px;
     margin: auto;
 }
 
 .contenedorFormulario-registroGastos h2{
+    text-align: center;
     margin: 20px 0;
     align-self: center;
     color: var(--tituloh1);

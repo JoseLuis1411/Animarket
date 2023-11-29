@@ -36,9 +36,8 @@
         } 
         else 
         {
-            echo "<script>alert('Registro de gastos exitoso');
-            history.go(-2);
-            </script>";
+            $_SESSION["nuevoGasto"] = true;
+            echo "<script> history.go(-2); </script>";
         }
     } else {
         echo "<script>alert('Error de acceso');
