@@ -29,7 +29,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--fondoMain);
-
+    min-height: 100vh;
 }
 
 *{
@@ -106,6 +106,7 @@ body {
 /*-----------------------------------------------------pie de pagina*/
 
 .piePagina{
+    flex-shrink: 0;
     margin: 25px auto 0px auto;
     text-align: center;
     font-size: 14px;
@@ -129,6 +130,7 @@ body {
 
 .flex-main{
     height: 100%;
+    min-height: calc(100vh - (15vh + 79px));
     max-width: 1100px;
     margin: auto;
     align-items: center;
@@ -247,6 +249,7 @@ body {
 
 .contenedor-registroAnimal{
     height: 100%;
+    min-height: calc(100vh - (15vh + 79px));
     max-width: 1100px;
     margin: auto;
     display: grid;
@@ -303,6 +306,7 @@ body {
 .contenedor-registroGastos{
     height: 100%;
     max-width: 1100px;
+    min-height: calc(100vh - (15vh + 79px));
     margin: auto;
     display: flex;
 }
@@ -323,6 +327,231 @@ body {
 
 
 
+/*------------------------------------------------Animales*/
+
+.contenedor-Animales{
+    height: 100%;
+    min-height: calc(100vh - (15vh + 79px));
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-Animales .button{
+    margin-top: 25px;
+    align-self:flex-start;
+    border-style: none;
+    border-radius: 10px;
+    background-color: var(--fondoButtonNormal);
+    padding: 11px;
+    color: white; 
+    text-decoration: none;
+    font-size: 15px;
+    transition: all .2s;
+}
+
+.contenedor-Animales .button:hover {
+    transform: scale(1.009);
+    background-color: var(--fondoButtonTarjetasHover);
+}
+
+.contenedor-Animales h1{
+    text-align: center;
+    margin: 20px 0;
+    align-self: center;
+    color: var(--tituloh1);
+}
+
+
+
+/*-------------------------------------------------Ventas*/
+
+.contenedor-registroVentas{
+    height: 100%;
+    max-width: 1100px;
+    min-height: calc(100vh - (15vh + 79px));
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-registroVentas h1{
+    text-align: center;
+    margin: 20px 0;
+    align-self: center;
+    color: var(--tituloh1);
+    font-size: 30px;
+}
+
+
+
+/*-----------------------------------------------Ayuda*/
+
+.contenedor-ayuda{
+    height: 100%;
+    min-height: calc(100vh - (15vh + 79px));
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-ayuda h1{
+    text-align: center;
+    margin: 20px 0;
+    align-self: center;
+    color: var(--tituloh1);
+    font-size: 30px;
+}
+
+.contenedor-preguntas{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+}
+
+.contenedor-preguntas details summary{
+    color: white;
+    background-color: #843c0c;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.contenedor-preguntas details p{
+    padding: 10px;
+    line-height: 22px;
+
+}
+
+
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.contenido {
+    display: none;
+    margin-top: 10px;
+}
+
+.boton.activo {
+    background-color: var(--fondoButtonTarjetasHover);
+}
+
+
+/*-----------------------------------------------------Animales*/
+
+/*Formulario dentro del modal*/
+.mostrarGastos{
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.mostrarGastos .grupo{
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mostrarGastos input{
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+ }
+
+ .mostrarGastos label{
+    font-size: 14px;
+    margin: 0;
+ }
+
+
+/* Estilo para el modal */
+#modal {
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    width: 80%;
+    padding: 40px 0px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para el fondo oscuro de fondo del modal */
+.modal-backdrop {
+    display: none !important;
+}
+
+/* Ajustes para centrar el contenido del modal */
+.modal-dialog {
+    margin: 0;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+/* Botón de cerrar */
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #000;
+}
+
+/* Ajustes para el título del modal */
+.modal-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Ajustes para el cuerpo del modal */
+.modal-body {
+    padding: 20px;
+}
+
+/* Ajustes para el pie del modal */
+.modal-footer {
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+}
+
+/* Estilo para el overlay del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+}
+
+
+
+
 /*----------------------------------------------FORMULARIOS GENERALES*/
 
  form{
@@ -333,6 +562,7 @@ body {
     border-radius: 20px;
     box-shadow: -2px 2px 20px 0px var(--sombraFormulario);
 }
+
 
  form span{
     color: red;
@@ -354,7 +584,7 @@ body {
     background-color: #f3efeb;
     outline: 1px solid #d6d2cfec;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: .2px;
     transition: outline 0.09s;
 }
@@ -367,7 +597,7 @@ body {
     outline: 2px solid #d6d2cfec;
 }
 
- form button{
+ form button, .boton{
     margin-top: 25px;
     align-self: center;
     border-style: none;
@@ -380,9 +610,78 @@ body {
     transition: all .2s;
 }
 
- form button:hover{
+ form button:hover, .boton:hover{
     transform: scale(1.009);
     background-color: var(--fondoButtonTarjetasHover);
+}
+
+
+/*------------------------------------------------------Tablas*/
+
+table {
+    width: auto;
+    background-color: white;
+    text-align: center;
+    margin: 30px 10px;
+}
+
+table th {
+    padding: 10px;
+    background-color: #c0812e;
+    color: white;
+    font-size: 15px;
+}
+
+table th:first-child{
+    width: 10%;
+}
+
+table td{
+    color: black;
+    font-size: 15px;
+    height: 30px;
+    padding: 5px;
+}
+
+table td a, .personalizado-btn, .venderButton{
+    align-self: center;
+    border-style: none;
+    border-radius: 10px;
+    background-color: var(--fondoButtonNormal);
+    padding: 6px;
+    color: white; 
+    text-decoration: none;
+    transition: all .2s;
+}
+
+table td a:hover, .personalizado-btn:hover{
+    text-decoration: none;
+    color: white; 
+    transform: scale(1.009);
+    background-color: var(--fondoButtonTarjetasHover);
+}
+
+.personalizado-btn{
+    background-color: rgb(37, 132, 187);
+    margin: 10px;
+}
+
+.personalizado-btn:hover{
+    text-decoration: none;
+    color: white; 
+    transform: scale(1.009);
+    background-color: rgb(34, 117, 165);
+}
+
+.venderButton{
+    background-color: rgb(180, 14, 14);
+}
+
+.venderButton:hover{
+    text-decoration: none;
+    color: white; 
+    transform: scale(1.009);
+    background-color: rgb(153, 13, 13);
 }
 
 
@@ -531,6 +830,25 @@ body {
         letter-spacing: .2px;
     }
 
+    /*Tablas generales*/
+    table th {
+        padding: 10px;
+        background-color: #c0812e;
+        color: white;
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    table td{
+        color: black;
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 /*Telefono mas ancho*/
@@ -583,7 +901,22 @@ body {
     .grid-tarjeta .fecha-tarjeta h4{
         font-size: 14px;
     }
+
+       /*Tablas generales*/
+    table th {
+        padding: 10px;
+        background-color: #c0812e;
+        color: white;
+        font-size: 13px;
+    }
     
+    table td{
+        color: black;
+        font-size: 13px;
+    }
+
+
+ 
 }
 
 /*Tablets*/
@@ -647,6 +980,20 @@ body {
         padding: 10px 15px;
         font-size: 12px;
     }
+
+    /*Tablas generales*/
+    table th {
+        padding: 10px;
+        background-color: #c0812e;
+        color: white;
+        font-size: 14px;
+    }
+    
+    table td{
+        color: black;
+        font-size: 14px;
+    }
+
     
 }
 

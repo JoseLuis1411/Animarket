@@ -284,7 +284,7 @@
 			$VIdCompraAnimal = $compra;
 
 			$sql = "SELECT DA.*, A.cAnimal, S.cSexo, CA.IdCompraAnimal ,CA.nPrecioCompra, CA.nPesoCompra, CA.dFechaCompra, GA.IdGastoAnimal,
-			GA.nComida, GA.nAgua, GA.nMedicina, GA.nVeterinario, GA.nTransporte, GA.nOtros 
+			GA.nComida, GA.nAgua, GA.nMedicina, GA.nVeterinario, GA.nTransporte, GA.nOtros, GA.IdDetalleAnimal 
 			FROM detalleanimales DA 
 			INNER JOIN sexos S ON S.IdSexo = DA.IdSexo 
 			INNER JOIN comprasanimales CA ON CA.IdCompraAnimal = DA.IdCompraAnimal 

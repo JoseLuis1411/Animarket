@@ -100,12 +100,13 @@
 
                 </form>
             </div>
-            <a class="buttonRegresar dos" onclick="retroceder();"><i class="fa-solid fa-arrow-left"></i></a>
+            <a class="buttonRegresar" onclick="retroceder();"><i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <div class="piePagina">
             <p>&copy; 2023 Animarket | Todos los derechos reservados</p>
         </div>
     </div>
+
 
     <script type='text/javascript'>
         function retroceder() {

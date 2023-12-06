@@ -42,10 +42,121 @@
         </div>
       </div>
 
+      <div class="contenedor-general2">
+        <div class="contenedor-ayuda">
+            <h1>Preguntas frecuentes</h1>
+            <div class="botones">
+              <button class="boton" onclick="mostrarContenido('contenido1')">General</button>
+              <button class="boton" onclick="mostrarContenido('contenido2')">Funcionalidad</button>
+              <button class="boton" onclick="mostrarContenido('contenido3')">Dinero</button>
+            </div>
+
+            <div id="contenido1" class="contenido">
+              <div class="contenedor-preguntas">
+                <details>
+                  <summary>1¿Como registrar un animal?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como se divide la funcionalidad?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿En que consiste la funcion de registrar gastos?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como registrar un animal?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como se divide la funcionalidad?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿En que consiste la funcion de registrar gastos?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+              </div>
+            </div>
+
+            <div id="contenido2" class="contenido">
+              <div class="contenedor-preguntas">
+                <details>
+                  <summary>2¿Como registrar un animal?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como se divide la funcionalidad?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿En que consiste la funcion de registrar gastos?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como registrar un animal?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+
+              </div>
+            </div>
+
+            <div id="contenido3" class="contenido">
+              <div class="contenedor-preguntas">
+                <details>
+                  <summary>3¿Como registrar un animal?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como se divide la funcionalidad?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿En que consiste la funcion de registrar gastos?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como registrar un animal?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+                <details>
+                  <summary>¿Como se divide la funcionalidad?</summary>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ipsam natus architecto ea ad! Culpa cumque corporis, facilis doloremque aliquid quisquam sapiente molestias. Officia dolore eos quae possimus sint voluptatum?</p>
+                </details>
+
+              </div>
+            </div>
+        </div>
+        <div class="piePagina">
+          <p>&copy; 2023 Animarket | Todos los derechos reservados</p>
+        </div>
+      </div>
+
       
 
 
       <script>
+        function mostrarContenido(idContenido) {
+          // Oculta todos los contenidos
+          var contenidos = document.getElementsByClassName('contenido');
+          for (var i = 0; i < contenidos.length; i++) {
+              contenidos[i].style.display = 'none';
+          }
+
+          // Desactiva todos los botones
+          var botones = document.getElementsByClassName('boton');
+          for (var i = 0; i < botones.length; i++) {
+              botones[i].classList.remove('activo');
+          }
+
+          // Muestra el contenido correspondiente
+          document.getElementById(idContenido).style.display = 'block';
+
+          // Activa el botón clicado  
+          event.currentTarget.classList.add('activo');
+        }
+
         function cerrarSesionConfirmacion() {
 
             swal.fire({

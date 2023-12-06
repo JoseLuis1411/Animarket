@@ -63,6 +63,7 @@
 		$tblmain = "";
 		foreach ($datos as $filas){
 			$tblmain .="<tr class='text-center'>\n";
+			$tblmain .="<td>". $filas['IdCompraAnimal'] . "</td>\n";
 			$tblmain .="<td>". $filas['cAnimal'] . "</td>\n";
 			$tblmain .="<td>". $filas['dFechaCompra'] . "</td>\n";
 			$tblmain .= "<td>
@@ -85,7 +86,7 @@
 		$tblmain = "";
 		foreach ($datos as $filas){
 			$tblmain .="<tr class='text-center'>\n";
-            $tblmain .="<td>". $filas['cCodigoPatente'] . "</td>\n";
+            $tblmain .="<td>". $filas['IdDetalleAnimal'] . "</td>\n";
 			$tblmain .="<td>". $filas['cAnimal'] . "</td>\n";
             $tblmain .="<td>". $filas['cRaza'] . "</td>\n";
             $tblmain .="<td>". $filas['cSexo'] . "</td>\n";
@@ -93,14 +94,8 @@
 			$tblmain .="<td>". $filas['dFechaCompra'] . "</td>\n";
             $tblmain .="<td>". $filas['nPesoCompra'] . "</td>\n";
             $tblmain .="<td>". $filas['nPrecioCompra'] . "</td>\n";
-			$tblmain .="<td>". $filas['nComida'] . "</td>\n";
-            $tblmain .="<td>". $filas['nAgua'] . "</td>\n";
-            $tblmain .="<td>". $filas['nMedicina'] . "</td>\n";
-			$tblmain .="<td>". $filas['nVeterinario'] . "</td>\n";
-            $tblmain .="<td>". $filas['nTransporte'] . "</td>\n";
-            $tblmain .="<td>". $filas['nOtros'] . "</td>\n";
-			$tblmain .="<td> <a href='../vista/registrarGastos.php?IdGastoAnimal=". $filas['IdGastoAnimal'] ."'>Agregar Gastos</a>\n '</td>\n";
-			
+			$tblmain .="<td> <a href='../vista/registrarGastos.php?IdGastoAnimal=". $filas['IdGastoAnimal'] ."'>Agregar</a>    <button type='button' class='btn btn-primary personalizado-btn' data-toggle='modal' data-target='.bd-example-modal-lg' onclick='abrirModalGastos(". $filas['IdDetalleAnimal'] .", " . $filas['nComida'] ." , " . $filas['nAgua'] ." , " . $filas['nMedicina'] ." , " . $filas['nVeterinario'] ." , " . $filas['nTransporte'] ." , " . $filas['nOtros'] .")'>Ver</button></td>\n";
+			$tblmain .="<td> <a class='venderButton' href='#'>Vender</a></td>\n ";
 		}
 
 		$resul[] = $tblmain;
